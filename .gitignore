@@ -1,0 +1,7 @@
+target/
+.idea/
+*.iml
+*.DS_Store
+
+pipeline_branch.yml
+activemq-data/localhost/KahaDB
