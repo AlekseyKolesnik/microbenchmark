@@ -1,9 +1,11 @@
 package com.kolesnik.benchmarks;
 
 import org.openjdk.jmh.annotations.Benchmark;
+import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Fork;
 import org.openjdk.jmh.annotations.Level;
 import org.openjdk.jmh.annotations.Measurement;
+import org.openjdk.jmh.annotations.Mode;
 import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.Setup;
 import org.openjdk.jmh.annotations.State;
@@ -17,7 +19,7 @@ import org.openjdk.jmh.infra.Blackhole;
 public class SampleBenchmark {
 
     @State(Scope.Thread)
-    public static class MyState {
+    public static class SampleState {
 
         @Setup(Level.Trial)
         public void doSetup() {
@@ -44,7 +46,8 @@ public class SampleBenchmark {
     }
 
     @Benchmark
-    public void testMethod(MyState state, Blackhole blackhole) {
+    @BenchmarkMode(Mode.All)
+    public void testMethod(SampleState state, Blackhole blackhole) {
         int sum = state.a + state.b;
         blackhole.consume(sum);
     }
