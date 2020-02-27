@@ -26,7 +26,6 @@ public class QRCodeGenerator {
     }
 
     public static void main(String[] args) throws IOException {
-        generateQRCodeStream(URL);
         BufferedImage img = generateQRCodeImage(URL);
         ImageIO.write(img, "png", new File("QRCodeGenerator.png"));
     }

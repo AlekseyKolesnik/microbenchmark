@@ -17,7 +17,7 @@ public class OutputStreamBenchmark {
 
     @Benchmark
     public void zxingGenStreamTest(Blackhole blackhole) throws IOException, WriterException {
-        ByteArrayOutputStream pngOutputStream = Zxing.generateQRCodeStream(URL, 120, 120);
+        ByteArrayOutputStream pngOutputStream = Zxing.generateQRCodeStream(URL, WIDTH, HEIGHT);
         blackhole.consume(pngOutputStream);
     }
 

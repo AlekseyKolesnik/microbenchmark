@@ -35,7 +35,7 @@ public class Zxing {
 
     public static void main(String[] args) throws IOException, WriterException {
         ByteArrayOutputStream pngOutputStream = generateQRCodeStream(URL, WIDTH, HEIGHT);
-        try (OutputStream outputStream = new FileOutputStream("QRGen.png")) {
+        try (OutputStream outputStream = new FileOutputStream("Zxing.png")) {
             pngOutputStream.writeTo(outputStream);
         }
     }
